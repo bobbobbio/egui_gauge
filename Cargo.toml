@@ -1,0 +1,14 @@
+[package]
+name = "egui_gauge"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+egui = "^0.22"
+emath = "^0.22"
+epaint = "^0.22"
+
+[dev-dependencies]
+eframe = "^0.22"
