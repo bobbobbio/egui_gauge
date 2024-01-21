@@ -132,12 +132,14 @@ impl Gauge {
             text_color,
             wrap_width,
         );
+        let visuals = ui.style().noninteractive();
         ui.painter().galley(
             Pos2 {
                 x: center.x - text.rect.width() / 2.0,
                 y: center.y + self.inner_width() / 5.0 - text.rect.height() / 2.0,
             },
             text,
+            visuals.bg_fill
         );
     }
 
