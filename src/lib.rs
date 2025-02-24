@@ -139,7 +139,7 @@ impl Gauge {
                 y: center.y + self.inner_width() / 5.0 - text.rect.height() / 2.0,
             },
             text,
-            visuals.bg_fill
+            visuals.bg_fill,
         );
     }
 
@@ -244,7 +244,8 @@ impl Gauge {
             stroke: Stroke {
                 width: 0.0,
                 color: bg_color,
-            },
+            }
+            .into(),
         }));
     }
 
@@ -262,7 +263,8 @@ impl Gauge {
             stroke: Stroke {
                 width: 0.0,
                 color: bg_color,
-            },
+            }
+            .into(),
         }));
     }
 
@@ -286,7 +288,8 @@ impl Gauge {
             stroke: Stroke {
                 width: 0.0,
                 color: bg_color,
-            },
+            }
+            .into(),
         }));
     }
 
@@ -315,7 +318,8 @@ impl Gauge {
             stroke: Stroke {
                 width: 2.0,
                 color: bg_color,
-            },
+            }
+            .into(),
         }));
     }
 
@@ -323,7 +327,7 @@ impl Gauge {
         let desired_size = egui::vec2(self.size, self.size);
         let (rect, response) = ui.allocate_exact_size(desired_size, Sense::hover());
 
-        response.widget_info(|| egui::WidgetInfo::slider(self.value, &self.text));
+        response.widget_info(|| egui::WidgetInfo::slider(true, self.value, &self.text));
 
         if ui.is_rect_visible(rect) {
             self.paint(ui, rect);
