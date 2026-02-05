@@ -40,7 +40,7 @@ fn main() {
     eframe::run_native(
         "Gauge Example",
         native_options,
-        Box::new(|cc| Box::new(GaugeExample::new(cc))),
+        Box::new(|cc| Ok(Box::new(GaugeExample::new(cc)))),
     )
     .unwrap();
 }

@@ -1,6 +1,6 @@
-///! This crate contains a gauge UI element for use with `egui`
-///! This gauge displays a numeric value in a manner that resembles a speedometer on a car
-///
+//! This crate contains a gauge UI element for use with `egui`
+//! This gauge displays a numeric value in a manner that resembles a speedometer on a car
+
 use egui::{Align2, FontFamily, FontId, Rect, Response, Sense, Shape, Ui};
 use epaint::{Color32, PathShape, Pos2, Stroke};
 use std::f32::consts::PI;
