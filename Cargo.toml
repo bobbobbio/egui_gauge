@@ -10,9 +10,9 @@ homepage = "https://github.com/bobbobbio/egui_gauge"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-egui = "^0.33"
-emath = "^0.33"
-epaint = "^0.33"
+egui = "^0.36"
+emath = "^0.36"
+epaint = "^0.36"
 
 [dev-dependencies]
-eframe = "^0.33"
+eframe = "^0.36"

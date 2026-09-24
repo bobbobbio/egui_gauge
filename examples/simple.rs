@@ -16,22 +16,24 @@ impl GaugeExample {
 }
 
 impl eframe::App for GaugeExample {
-    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        egui::CentralPanel::default().show(ctx, |ui| {
+    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        egui::CentralPanel::default().show(ui, |ui| {
             ui.heading("Gauge Example");
             ui.spacing_mut().slider_width = 300.0;
             ui.add(Slider::new(&mut self.value, 0..=100));
             ui.add(Gauge::new(self.value, 0..=100, 200.0, Color32::BLUE).text("hello"));
             ui.add(Gauge::new(self.value + 100, 100..=200, 300.0, Color32::RED).text("some text"));
-
             ui.checkbox(&mut self.settings, "Settings");
-            egui::Window::new("Settings")
-                .open(&mut self.settings)
-                .vscroll(true)
-                .show(ctx, |ui| {
-                    ctx.settings_ui(ui);
-                });
         });
+    }
+
+    fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        egui::Window::new("Settings")
+            .open(&mut self.settings)
+            .vscroll(true)
+            .show(ctx, |ui| {
+                ctx.settings_ui(ui);
+            });
     }
 }
 
